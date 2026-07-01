@@ -2,7 +2,7 @@ import os
 import yaml
 
 
-def config_loader(filename="config.yml", search_paths=None):
+def config_loader(filename="config.yaml", search_paths=None):
     if search_paths is None:
         search_paths = [
             os.getcwd(),
@@ -20,4 +20,4 @@ def config_loader(filename="config.yml", search_paths=None):
 
 
 
-config = config_loader("config.yml")
+config = config_loader("config.yaml")
