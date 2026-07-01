@@ -1,7 +1,9 @@
+
 options:
-  rock: 1
-  paper: 2
-  spins: 3
+  '1': 'rock'
+  '2': 'paper'
+  '3': 'scissors'
+  score: 'score'
 
 score:
-  total score: 5
+  total_score: 3
