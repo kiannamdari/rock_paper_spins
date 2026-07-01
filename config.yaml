@@ -1,0 +1,7 @@
+options:
+  rock: 1
+  paper: 2
+  spins: 3
+
+score:
+  total score: 5
