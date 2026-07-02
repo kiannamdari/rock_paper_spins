@@ -4,6 +4,9 @@ options:
   '2': 'paper'
   '3': 'scissors'
   score: 'score'
+<<<<<<< HEAD
 
+=======
+>>>>>>> feat_two_player_rps
 score:
   total_score: 3
