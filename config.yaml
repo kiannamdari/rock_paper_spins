@@ -1,0 +1,8 @@
+
+options:
+  '1': 'rock'
+  '2': 'paper'
+  '3': 'scissors'
+  score: 'score'
+score:
+  total_score: 3
