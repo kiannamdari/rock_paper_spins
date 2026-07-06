@@ -1,3 +1,4 @@
+#!/home/tavaneshkade/workspace/rock_paper_spins/.venv/bin/python3
 import random
 
 from config_loader import config

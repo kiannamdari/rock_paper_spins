@@ -1,3 +1,4 @@
+#!/home/tavaneshkade/workspace/rock_paper_spins/.venv/bin/python3
 from config_loader import config
 
 def play():
