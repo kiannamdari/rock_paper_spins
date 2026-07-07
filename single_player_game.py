@@ -3,7 +3,7 @@ import random
 
 from config_loader import config
 
-def play():
+def single_player_game():
     options = config.get('options')
     bot_options = ['rock', 'paper', 'scissors']
     for key, value in options.items():
@@ -75,7 +75,8 @@ def play():
             print('tie')
             continue
 
-result = play()
+if __name__ == '__main__':
+    single_player_game()
 
 
 
