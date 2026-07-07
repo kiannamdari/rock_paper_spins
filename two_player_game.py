@@ -1,7 +1,7 @@
 #!/home/tavaneshkade/workspace/rock_paper_spins/.venv/bin/python3
 from config_loader import config
 
-def play():
+def two_player_game():
     options = config.get('options')
     for key, value in options.items():
         print(key,':', value)
@@ -87,7 +87,8 @@ def play():
             print('tie')
             continue
 
-result = play()
+if __name__ == '__main__':
+    two_player_game()
 
 
 
