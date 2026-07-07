@@ -3,11 +3,13 @@ this is a game. you can play with bot or second player and your options is three
 
 ## Features
 single player game
+
 two player game
 
 ## Installation
 ### clone the repo 
 git clone https://github.com/kiannamdari/rock_paper_spins.git
+
 cd rock_paper_spins
 
 ### create virtual environment
@@ -24,15 +26,17 @@ pip install pyyaml
 ### run scripts
 #### for single plyer game
 ./single_player_game.py
+
 python single_player_game.py
 #### for two player game
 ./two_player_game.py
+
 python two_player_game.py
 
 ## Configuration
 ### files
 config.yaml
-config_loader
 
+config_loader.py
 ## Cuntributing
 no body send pull requests
