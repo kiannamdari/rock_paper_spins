@@ -10,7 +10,7 @@ def single_player_game():
         print(key,':', value)
     player_score = 0
     bot_score = 0
-    game = {
+    game_history = {
         "round_one": {},
         "round_two": {},
         "round_three": {},
@@ -85,16 +85,16 @@ def single_player_game():
                     "player_score": player_score,
                     "bot_score": bot_score
                 }
-                game.update({"round_one": round_one})
+                game_history.update({"round_one": round_one})
 
             if round_counter == 2:
-                    round_two = {
-                        "player_choice": act,
-                        "bot_choice": bot_choice,
-                        "player_score": player_score,
-                        "bot_score": bot_score
-                    }
-                    game.update({"round_two": round_two})
+                 round_two = {
+                    "player_choice": act,
+                    "bot_choice": bot_choice,
+                    "player_score": player_score,
+                    "bot_score": bot_score
+                 }
+                 game_history.update({"round_two": round_two})
 
             if round_counter == 3:
                 round_three = {
@@ -103,7 +103,7 @@ def single_player_game():
                 "player_score": player_score,
                 "bot_score": bot_score
                 }
-                game.update({"round_three": round_three})
+                game_history.update({"round_three": round_three})
 
             if round_counter == 4:
                 round_four = {
@@ -112,7 +112,7 @@ def single_player_game():
                 "player_score": player_score,
                 "bot_score": bot_score
                 }
-                game.update({"round_four": round_four})
+                game_history.update({"round_four": round_four})
 
             if round_counter == 5:
                 round_five = {
@@ -121,7 +121,7 @@ def single_player_game():
                 "player_score": player_score,
                 "bot_score": bot_score
                 }
-                game.update({"round_five": round_five})
+                game_history.update({"round_five": round_five})
 
             round_counter += 1
             continue
@@ -134,10 +134,8 @@ def single_player_game():
             print("bot is winner !!!!!!!!!!!!!")
             break
 
-    print(game)
-    json_data = json.dumps(game, indent=20)
     with open("games_history.json", "w" , encoding="utf-8") as f:
-        f.write(json_data)
+        f.write(json.dumps(game_history, indent=4))
 
 if __name__ == '__main__':
     single_player_game()
