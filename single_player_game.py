@@ -23,7 +23,7 @@ def single_player_game():
 
         if player_score != config["score"]["total_score"] and bot_score != config["score"]["total_score"]:
             choice = (input('Choose your number in options: '))
-            act = config["options"][choice]
+
 
             if choice not in options:
                 print('choose a variable in options')
@@ -33,7 +33,7 @@ def single_player_game():
                 print('your score is', player_score)
                 print('bot score is', bot_score)
                 continue
-
+            act = config["options"][choice]
             print('your choose is', config.get('options').get(choice))
             print('bot choose is', bot_choice)
 
@@ -136,7 +136,7 @@ def single_player_game():
 
     print(game)
     json_data = json.dumps(game, indent=20)
-    with open("works_of_single_player_game.json", "w" , encoding="utf-8") as f:
+    with open("games_history.json", "w" , encoding="utf-8") as f:
         f.write(json_data)
 
 if __name__ == '__main__':
