@@ -1,4 +1,4 @@
-# Byte-compiled / optimized / DLL files
+g Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
@@ -217,4 +217,5 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 .idea/
-games_history.json
+single_player_game_history.json
+two_player_game_history.json

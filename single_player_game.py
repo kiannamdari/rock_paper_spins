@@ -134,7 +134,7 @@ def single_player_game():
             print("bot is winner !!!!!!!!!!!!!")
             break
 
-    with open("games_history.json", "w" , encoding="utf-8") as f:
+    with open("single_player_game_history.json", "w" , encoding="utf-8") as f:
         f.write(json.dumps(game_history, indent=4))
 
 if __name__ == '__main__':
