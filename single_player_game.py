@@ -13,13 +13,17 @@ def single_player_game():
     game = {
         "round_one": {},
         "round_two": {},
-        "round_three": {}
+        "round_three": {},
+        "round_four": {},
+        "round_five": {},
     }
+    round_counter = 1
     while True:
         bot_choice = random.choice(bot_options)
 
-        if  player_score != config.get("score").get("total_score"):
+        if player_score != config["score"]["total_score"] and bot_score != config["score"]["total_score"]:
             choice = (input('Choose your number in options: '))
+            act = config["options"][choice]
 
             if choice not in options:
                 print('choose a variable in options')
@@ -35,7 +39,7 @@ def single_player_game():
 
             if choice == '1' and bot_choice == 'rock':
                 print('tie')
-
+                continue
 
             elif choice == '1' and bot_choice == 'paper':
                 print('you lose')
@@ -54,7 +58,7 @@ def single_player_game():
 
             elif choice == '2' and bot_choice == 'paper':
                 print('tie')
-
+                continue
 
             elif choice == '2' and bot_choice == 'scissors':
                 print('you lose')
@@ -72,32 +76,56 @@ def single_player_game():
 
             elif choice == '3' and bot_choice == 'scissors':
                 print('tie')
+                continue
 
-            if bot_score == 1 or player_score == 1:
+            if round_counter == 1:
                 round_one = {
-                    "player_choice": choice,
+                    "player_choice": act,
                     "bot_choice": bot_choice,
                     "player_score": player_score,
                     "bot_score": bot_score
                 }
                 game.update({"round_one": round_one})
-            if bot_score == 2 or player_score == 2:
-                round_two = {
-                    "player_choice": choice,
-                    "bot_choice": bot_choice,
-                    "player_score": player_score,
-                    "bot_score": bot_score
-                }
-                game.update({"round_two": round_two})
-            if bot_score == 3 or player_score == 3:
+
+            if round_counter == 2:
+                    round_two = {
+                        "player_choice": act,
+                        "bot_choice": bot_choice,
+                        "player_score": player_score,
+                        "bot_score": bot_score
+                    }
+                    game.update({"round_two": round_two})
+
+            if round_counter == 3:
                 round_three = {
-                "player_choice": choice,
+                "player_choice": act,
                 "bot_choice": bot_choice,
                 "player_score": player_score,
                 "bot_score": bot_score
                 }
                 game.update({"round_three": round_three})
+
+            if round_counter == 4:
+                round_four = {
+                "player_choice": act,
+                "bot_choice": bot_choice,
+                "player_score": player_score,
+                "bot_score": bot_score
+                }
+                game.update({"round_four": round_four})
+
+            if round_counter == 5:
+                round_five = {
+                "player_choice": act,
+                "bot_choice": bot_choice,
+                "player_score": player_score,
+                "bot_score": bot_score
+                }
+                game.update({"round_five": round_five})
+
+            round_counter += 1
             continue
+
         elif player_score == config.get("score").get("total_score"):
             print("you are winner !!!!!!!!!!!!")
             break
