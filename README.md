@@ -24,14 +24,9 @@ pip install pyyaml
 
 ## Usage
 ### run scripts
-#### for single plyer game
-./single_player_game.py
+./main.py 
 
-python single_player_game.py
-#### for two player game
-./two_player_game.py
-
-python two_player_game.py
+python main.py
 
 ## Configuration
 ### files
