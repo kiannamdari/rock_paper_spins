@@ -1,3 +1,4 @@
+#!/home/tavaneshkade/workspace/rock_paper_spins/.venv/bin/python3
 from single_player_game import single_player_game
 from two_player_game import two_player_game
 
