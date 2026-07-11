@@ -136,6 +136,3 @@ def single_player_game():
 
     with open("single_player_game_history.json", "w" , encoding="utf-8") as f:
         f.write(json.dumps(game_history, indent=4))
-
-if __name__ == '__main__':
-    single_player_game()

@@ -21,12 +21,7 @@ def two_player_game():
     while True:
         if player_one_score != 3 and player_two_score != 3:
             player_one_choice = (input('player one, Choose your item in options: '))
-            player_two_choice = (input('player two, Choose your item in options: '))
-            
-            player_one_act = config["options"][player_one_choice]
-            player_two_act = config["options"][player_two_choice]
-            
-            
+
             if player_one_choice == 'score':
                 print('player one, your score is', player_one_score)
                 print('player two, your score is', player_two_score)
@@ -36,7 +31,9 @@ def two_player_game():
                 print('player one or player two, choose a item in options!')
                 continue
 
-            
+            player_one_act = config["options"][player_one_choice]
+            player_two_choice = (input('player two, Choose your item in options: '))
+
             if player_two_choice not in options:
                 print('player one or player two, choose a item in options!')
                 continue
@@ -46,6 +43,8 @@ def two_player_game():
                 print('player two, your score is', player_two_score)
                 continue
             
+            player_two_act = config["options"][player_two_choice]
+
             print('player one, your choose is', config.get('options').get(player_one_choice))
             print('player two, your choose is', config.get('options').get(player_two_choice))
 
@@ -101,7 +100,7 @@ def two_player_game():
                 }
                 game_history.update({"round_one": round_one})
         
-            if round_counter == 2:
+            elif round_counter == 2:
                 round_two = {
                     "player_one_score": player_one_score,
                     "player_two_score": player_two_score,
@@ -110,7 +109,7 @@ def two_player_game():
                 }
                 game_history.update({"round_two": round_two})
         
-            if round_counter == 3:
+            elif round_counter == 3:
                 round_three = {
                     "player_one_score": player_one_score,
                     "player_two_score": player_two_score,
@@ -119,7 +118,7 @@ def two_player_game():
                 }
                 game_history.update({"round_three": round_three})
         
-            if round_counter == 4:
+            elif round_counter == 4:
                 round_four = {
                     "player_one_score": player_one_score,
                     "player_two_score": player_two_score,
@@ -128,7 +127,7 @@ def two_player_game():
                 }
                 game_history.update({"round_four": round_four})
 
-            if round_counter == 5:
+            elif round_counter == 5:
                 round_five = {
                     "player_one_score": player_one_score,
                     "player_two_score": player_two_score,
@@ -148,10 +147,3 @@ def two_player_game():
             break
     with open("two_player_game_history.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(game_history, indent=4))
-
-if __name__ == '__main__':
-    two_player_game()
-
-
-
-
